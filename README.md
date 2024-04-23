@@ -53,6 +53,7 @@ Definir resultado como false -> Retornar true/false: Retorna false se o usuário
 Análise dos Caminhos:
 
 
+
 Caminho 1 (Usuário encontrado):
 
 Iniciar o sistema
@@ -70,6 +71,7 @@ Definir nome e resultado como true
 Retornar true/false (true)
 
 
+
 Caminho 2 (Usuário não encontrado com conexão bem-sucedida):
 
 Iniciar o sistema
@@ -85,6 +87,8 @@ Usuário não encontrado
 Definir resultado como false
 
 Retornar true/false (false)
+
+
 
 Caminho 3 (Falha na conexão com o banco de dados):
 
