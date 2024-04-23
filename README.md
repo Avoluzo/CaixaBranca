@@ -7,11 +7,13 @@ ENTRADA:
 
 verificarUsuario(String login, String senha): Recebe o login e senha do usuário como parâmetros.
 
+
 SAÍDA:
 
 boolean result: Retorna true se o usuário for encontrado e false caso contrário.
 
 String nome: Contém o nome do usuário encontrado, caso o login seja bem-sucedido.
+
 
 
 NÓS:
@@ -23,6 +25,7 @@ conectarBD(): Representa a tentativa de conexão com o banco de dados.
 Tentar conectar ao BD: Indica o resultado da tentativa de conexão.
 
 Conexão bem-sucedida: Representa o sucesso da conexão com o banco de dados.
+
 
 
 ARESTAS:
@@ -46,10 +49,11 @@ Definir nome e resultado como true -> Retornar true/false: Retorna true se o usu
 Definir resultado como false -> Retornar true/false: Retorna false se o usuário não for encontrado.
 
 
+
 Análise dos Caminhos:
 
-Caminho 1:
-(Usuário encontrado):
+
+Caminho 1 (Usuário encontrado):
 
 Iniciar o sistema
 
@@ -65,6 +69,28 @@ Definir nome e resultado como true
 
 Retornar true/false (true)
 
+
+Caminho 2 (Usuário não encontrado com conexão bem-sucedida):
+
+Iniciar o sistema
+
+Tentar conectar ao banco de dados (conexão bem-sucedida)
+
+Criar consulta SQL para verificar o usuário
+
+Executar a consulta SQL
+
+Usuário não encontrado
+
+Definir resultado como false
+
+Retornar true/false (false)
+
+Caminho 3 (Falha na conexão com o banco de dados):
+
+Iniciar o sistema
+
+Tentar conectar ao banco de dados (conexão falhou)
 
 
 
