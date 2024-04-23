@@ -1,14 +1,75 @@
 # CaixaBranca
 Atividade caixa branca, matéria qualidade e testes de software, utilizando java
 
-erros encontrados:
+ Pontos de Entrada e Saída:
 
-1- Falta de verificação de erros, O código não verifica se há erros durante a conexão com o banco de dados ou a execução da string SQL. Isso pode ser corrigido utilizando um bloco "try-catch".
+ENTRADA:
 
-2- O código não gerencia bem, a utilização de recursos, não fecha a conexão com o banco de dados quando ela não é mais necessária. Isso pode ser feito usando um bloco finally no método verificarUsuario().
+verificarUsuario(String login, String senha): Recebe o login e senha do usuário como parâmetros.
 
-3- Repetição de código. O código duplica a lógica para conectar ao banco de dados nos métodos conectarBD() e verificarUsuario(). Essa lógica pode ser refatorada para um método separado que pode ser chamado por ambos os métodos.
+SAÍDA:
 
-4- Exposição da senha do usuário, está sendo armazenada diretamente no código como uma string literal . Isso é extremamente inseguro, pois expõe a senha no código fonte
+boolean result: Retorna true se o usuário for encontrado e false caso contrário.
 
-5- Não existe validação de senha. O código não valida os dados de entrada (login e senha) antes de serem utilizados na consulta SQL. Pode ser corrigido adicionando estruturas de decisão e condições de validação
+String nome: Contém o nome do usuário encontrado, caso o login seja bem-sucedido.
+
+
+NÓS:
+
+iniciar: Representa o início da execução do sistema.
+
+conectarBD(): Representa a tentativa de conexão com o banco de dados.
+
+Tentar conectar ao BD: Indica o resultado da tentativa de conexão.
+
+Conexão bem-sucedida: Representa o sucesso da conexão com o banco de dados.
+
+
+ARESTAS:
+
+iniciar -> conectarBD(): Inicia a tentativa de conexão com o banco de dados.
+
+Tentar conectar ao BD -> Conexão bem-sucedida: Indica o sucesso da conexão.
+
+Conexão bem-sucedida -> Criar consulta SQL: Prossegue para a criação da consulta SQL.
+
+Criar consulta SQL -> Executar consulta: Executa a consulta SQL criada.
+
+Executar consulta -> Usuário encontrado?: Verifica se o usuário foi encontrado na consulta.
+
+Usuário encontrado? -> Definir nome e resultado como true: Define o nome e o resultado como true se encontrado.
+
+Usuário encontrado? -> Definir resultado como false: Define o resultado como false se o usuário não for encontrado.
+
+Definir nome e resultado como true -> Retornar true/false: Retorna true se o usuário for encontrado.
+
+Definir resultado como false -> Retornar true/false: Retorna false se o usuário não for encontrado.
+
+
+Análise dos Caminhos:
+
+Caminho 1:
+(Usuário encontrado):
+
+Iniciar o sistema
+
+Tentar conectar ao banco de dados (conexão bem-sucedida)
+
+Criar consulta SQL para verificar o usuário
+
+Executar a consulta SQL
+
+Usuário encontrado
+
+Definir nome e resultado como true
+
+Retornar true/false (true)
+
+
+
+
+
+
+
+
+
